@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TikTok Redirect</title>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <p id="output"></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+
+    if (code) {
+      document.getElementById("output").textContent =
+        "Authorization code: " + code;
+      console.log("Copy this code into your app:", code);
+    } else {
+      document.getElementById("output").textContent =
+        "No authorization code found.";
+    }
+  </script>
+</body>
+</html>
